@@ -34,6 +34,7 @@ pipeline {
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }
 
+    }
     stage('test on Debian') {
       agent {
         docker 'openjdk:8u121-jre'
@@ -43,8 +44,5 @@ pipeline {
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }  
     }
-
-     }
-       
-    }
+  }
 }
